@@ -1,0 +1,23 @@
+ACTOR P : PlayerPawn{
+PainChance 0
+Player.ViewHeight 0
+Speed 0
+Player.DisplayName "P"
+Player.StartItem "F"
++NOBLOOD-PICKUP+NOSKIN States{Spawn:
+"----" A 1
+Loop
+See:
+"----" A 1
+Loop
+Missile:
+"----" A 1
+Goto Spawn
+Death:
+"----" A -1
+Stop}
+}ACTOR F : PowerUpGiver{Inventory.MaxAmount 0 Powerup.Type "Flight" Powerup.Duration 0x2fffffff +INVENTORY.AUTOACTIVATE States{
+Spawn:
+TNT1 A -1
+Stop}
+}
